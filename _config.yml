@@ -1,0 +1,19 @@
+# Site settings
+title: Displaced
+email: nauras@moogmedia.ca
+description: Displaced description
+baseurl: ""
+url: "www.displaced.ca"
+github_username:  timelytree
+include: ["_pages"]
+permalink: /:title
+
+collections:
+  category:
+    output: true
+
+# Build settings
+markdown: kramdown
+
+sass:
+  sass_dir: _scss

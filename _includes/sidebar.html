@@ -1,0 +1,23 @@
+<div id="sidebar">
+  <div class="storyLIST">
+    <!--///////////////////////////////////////////////////////////// Menu  -->
+    <ul class="menu">
+      <li><button class="menuLINK" data-link="/">Home</button></li>
+      <li><button class="menuLINK" data-link="/about">About</button></li>
+      <li><button class="menuLINK" data-link="https://www.instagram.com" data-tab="_blank"><img src="/assets/core/icons/instagram_icon_black.svg" /></button></li>
+    </ul>
+    <!--/////////////////////////////////////////////////////// Story List  -->
+    <h1>Stories</h1>
+    <ul>
+      {% for post in site.posts %}
+        <li class="storyITEM" data-link="{{ post.permalink }}">
+          <div class="storyIMG" style="background-image: url('/assets/uploads/{{ post.cover_image }}')"></div>
+          <div class="storyINFO">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.logline }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
