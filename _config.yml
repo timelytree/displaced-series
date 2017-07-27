@@ -6,7 +6,7 @@ baseurl: "/"
 url: "www.displacedseries.com"
 github_username:  timelytree
 include: ["_pages"]
-permalink: /:title
+permalink: pretty
 
 collections:
   category:
