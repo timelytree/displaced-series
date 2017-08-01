@@ -37,6 +37,11 @@
       z-index: 100;
       display: block;
       cursor: pointer;
+      transition: 150ms;
+      &:hover {
+        transition: 150ms;
+        background-color: rgba(255, 255, 255, 0.5);
+      }
     }
   }
   #overlay {

@@ -1,17 +1,19 @@
 ---
 layout: post
 date:   2017-07-01 12:01
-permalink: /post-2.html
-title: 'Post 2'
+permalink: /video-post.html
+title: 'Video Post'
 logline: 'Lorem ipsum dolor sit amet'
-cover_image: '1501077266.jpg'
-seoTITLE: 'Post 2 | Displaced'
+cover_image: '1501077270.jpg'
+seoTITLE: 'Video Post | Displaced'
 seoDESCRIPTION: 'Lorem ipsum dolor sit amet'
 ---
 
-# Post 2
+# Video Post
 
-![Image of an old man](/assets/uploads/large/1501077266.jpg)
+<div class="videoWRAPPER">
+  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/o1uTLj_vwds" frameborder="0" allowfullscreen></iframe>
+</div>
 
 Due to the pharmacokinetics of several active components within St. John’s Wort, it is possible that interactions with concomitant medications such as ciclosporin, digoxin, indinavir, theophylline [10] and warfarin [11] can occur. As well, taking Hypericum with the oral contraceptive pill can cause less of the contraceptive to be metabolized, leading to an “under-dosage” effect, ultimately increasing the chance of pregnancy [12]. The European Scientific Cooperative on Phytotherapy also recommends not using St. John’s Wort if taking anti-cancer medications, blood thinners, antidepressants (ie: SSRIs), anti-HIV agents, cardiovascular medications or immunosuppressants [9].
 

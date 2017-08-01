@@ -8,10 +8,26 @@
 
   h3 {
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: white;
   }
 }
 
+#postPAGE, .infoPAGE {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#aboutPAGE {
+  #instagramICON {
+    width: 75px;
+    height: 75px;
+    padding: 5px;
+    border-radius: 22px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    background-color: white;
+  }
+}
 
 
 

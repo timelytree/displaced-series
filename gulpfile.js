@@ -14,6 +14,7 @@ var config = {
 
 gulp.task('js', function() {
   return gulp.src([
+      config.jsPath + 'instafeed.min.js',
       config.jsPath + 'blurStack.js',
       config.jsPath + 'drawCanvasCoverImage.js',
       config.jsPath + 'resourceThrottle.js',

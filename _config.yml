@@ -1,7 +1,7 @@
 # Site settings
 title: Displaced
 email: nauras@moogmedia.ca
-description: Displaced description
+description: 'Displaced description'
 baseurl: "/"
 url: "www.displacedseries.com"
 github_username:  timelytree

@@ -19,7 +19,7 @@
 function paintImage() {
   var img = gA(page, 'img');
 
-  Caman("#canvas", '/assets/uploads/'+img+'', function () {
+  Caman("#canvas", '/assets/uploads/large/'+img+'', function () {
     this.resize({ width: window.innerWidth, height: window.innerHeight });
     this.stackBlur(50);
     this.render();
@@ -83,6 +83,17 @@ function navINT() {
   }
 }
 
+function instagramINIT() {
+  var feed = new Instafeed({
+    accessToken: '4026789722.1677ed0.28056be8b2f648579bff2ef036629825',
+    get: 'user',
+    userId: '4026789722',
+    limit: 6,
+    template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+  });
+  feed.run();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   container = cE('container')[0];
   page = cE('page')[0];
@@ -90,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
   menuINT();
   storyItemINT();
   navINT();
+  if (page.id == 'aboutPAGE') { instagramINIT(); }
 });
 
 window.addEventListener("optimizedResize", function() {
