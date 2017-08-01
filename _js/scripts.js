@@ -89,7 +89,8 @@ function instagramINIT() {
     get: 'user',
     userId: '4026789722',
     limit: 6,
-    template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+    template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
+    resolution: 'low_resolution'
   });
   feed.run();
 }
