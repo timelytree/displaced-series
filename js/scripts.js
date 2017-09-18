@@ -337,7 +337,7 @@ function instagramINIT() {
   var feed = new Instafeed({
     accessToken: '4026789722.1677ed0.28056be8b2f648579bff2ef036629825',
     get: 'user',
-    userId: '4026789722',
+    userId: '5837355316',
     limit: 6,
     template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
     resolution: 'low_resolution'

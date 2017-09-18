@@ -1,22 +1,32 @@
 ---
 layout: post
-date:   2017-07-01 12:01
-permalink: /video-post.html
-title: 'Video Post'
-logline: 'Lorem ipsum dolor sit amet'
-cover_image: '1501077270.jpg'
-seoTITLE: 'Video Post | Displaced'
-seoDESCRIPTION: 'Lorem ipsum dolor sit amet'
+date:   2017-09-17 14:40
+permalink: /the-undocumented-millenials.html
+title: 'The Undocumented Millenials'
+logline: 'Burn your identity. Hide in a cargo box. Get to the refugee camp. Smoke shisha with your best friends. Restart life.'
+cover_image: 'the-undocumented-millenials.jpg'
+seoTITLE: 'The Undocumented Millenials | A Displaced Story'
+seoDESCRIPTION: 'Burn your identity. Hide in a cargo box. Get to the refugee camp. Smoke shisha with your best friends. Restart life.'
 ---
 
-# Video Post
+# The Undocumented Millenials
 
 <div class="videoWRAPPER">
-  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/o1uTLj_vwds" frameborder="0" allowfullscreen></iframe>
+  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/z0xzIbF_GHk" frameborder="0" allowfullscreen></iframe>
 </div>
 
-Due to the pharmacokinetics of several active components within St. John’s Wort, it is possible that interactions with concomitant medications such as ciclosporin, digoxin, indinavir, theophylline [10] and warfarin [11] can occur. As well, taking Hypericum with the oral contraceptive pill can cause less of the contraceptive to be metabolized, leading to an “under-dosage” effect, ultimately increasing the chance of pregnancy [12]. The European Scientific Cooperative on Phytotherapy also recommends not using St. John’s Wort if taking anti-cancer medications, blood thinners, antidepressants (ie: SSRIs), anti-HIV agents, cardiovascular medications or immunosuppressants [9].
+To start over they start by burning their identities. Then, some choose to walk across continents while some swim through oceans. Along the way they hide in cargo boxes, crawl under barbed wire fences, squeeze in between hot railcars, or in the trunks of their smugglers’ cars.
 
-St. John’s Wort should be ingested as a tea (250mL, 1 cup) or tincture (3mL, ½ tsp) 3 times daily for a minimum of 1 week. To even further increase the effects, combine the tinctures of Valerian Root (3mL, ½ tsp) and St. John’s Wort (3mL, ½ tsp) and ingest 2-3 times per day for 3-6 weeks. If symptoms persist for more than 8 weeks, consult a physician [9].
+Along the way, the person that helped you over that fence becomes your best friend. Together you will spend an unknown amount of days and nights in the back of a pitch black truck. The guy who gave you cigarettes while you wait in detention becomes your business partner. Together you will cut a deal with the Italian mafia and bribe the French police.
 
-Consisting of 490 species [1], the name “St. John’s Wort” can be used to refer to any of them. Hypericum perforatum is the species most commonly used – aptly named “common St. John’s Wort” – for its ability to treat mild-to-moderate depression [2, 3, 4, 5, 11] and anxiety [6] and has a mild lemony taste. On the contrary, recent large studies of severe major depression [7, 8] show little to no anti-depressive effects by St. John’s Wort, especially in cases of prolonged durations of depression [5]. Observational studies have shown that the rate of adverse effects caused by St. John’s Wort is nearly 10 times lower than that of synthetic antidepressants [3].
+The 6 who you share a 4-person tent with at camp for 10 months become your new family. Together you will help each other out of depression. Together you will also manage to party, to get high, to fall in love with the German girls and to hustle for absolutely everything.
+
+_Displaced_ delves into the lives of those displaced by conflict in their homelands. They’re some of the most intelligent, adaptable and resourceful people living in our generation -  and they’re who we want to meet.
+
+With a focus on how youth are restarting from the ground up, this series is a raw, fresh, highly intimate original documentary series that nose dives into the ins and outs of life in a refugee camp, and humanizes one of the misrepresented and stereotyped groups on the planet.
+
+It explores how those displaced by war, corrupted economies, and devastated environments manage not only to survive their circumstances, but thrive despite them, and what they can teach the rest of us about human resilience. Through the eyes of ordinary people stuck in extraordinary situations, the show thrusts an ambiguous, inanimate and pretty removed group of people into the limelight in a way that no other media outlet really captures.
+
+We are not here to talk politics, race, religion, sex or status. We’re here to go way deeper and begin sifting through the noise of the most covered stories of our generation.
+
+First we’ll tell you who we are and how we got on this crazy ride. Then we’ll take you with us to Greece, where we’ll be filming the first season of the series and showing you a world that no other media outlet ever captures.
