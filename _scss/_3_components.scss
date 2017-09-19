@@ -122,7 +122,7 @@
   top: 25px;
   left: 25px;
   width: calc(24.5% - 50px);
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: $whiteTrans80;
   li {
     float: left;
     height: 100%;
@@ -157,11 +157,11 @@
 #postCONTENT, .infoPAGE .content {
   width: 737px;
   margin: 0 auto;
-  margin-bottom: 100px;
+  margin-bottom: 25px;
   padding-top: 100px;
   height: auto;
 
-  h1, p {
+  h1, p, ol {
     background-color: $whiteTrans95;
     padding: 10px;
     width: 100%;
@@ -179,14 +179,26 @@
     line-height: 22px;
     &:nth-child(2) {
       margin-bottom: 25px;
+      padding-bottom: 10px;
     }
     &:last-child {
       margin-bottom: 0;
     }
   }
 
+  a {
+    display: inline-block;
+    color: $blue700;
+  }
+
   img {
     width: 100%;
+  }
+
+  ol {
+    padding-left: 40px;
+    margin: 0;
+    box-sizing: border-box;
   }
 }
 
@@ -217,6 +229,23 @@
     margin-bottom: 5px;
     &:nth-child(3n) {
       margin-right: 0;
+    }
+  }
+}
+
+#footer {
+  margin-bottom: 100px;
+  .menu {
+    position: static;
+    background-color: $whiteTrans80;
+    border: 0;
+    margin: 0 auto;
+    margin-top: 15px;
+    height: auto;
+    width: 737px;
+    padding: 25px 0;
+    img {
+      width: 30px;
     }
   }
 }
