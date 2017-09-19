@@ -267,9 +267,14 @@ function gA(item, att) { return item.getAttribute('data-'+att+''); }
 })();
 
 function paintImage() {
-  var img = gA(page, 'img');
+  var img = gA(page, 'img'),
+      path = '/assets/uploads/large/'+img+'';
 
-  Caman("#canvas", '/assets/uploads/large/'+img+'', function () {
+  if (E('teamPAGE')) {
+    path = img;
+  }
+
+  Caman("#canvas", path, function () {
     this.resize({ width: window.innerWidth, height: window.innerHeight });
     this.stackBlur(50);
     this.render();

@@ -42,7 +42,34 @@
   }
 }
 
+#teamPAGE {
+  overflow-y: scroll;
 
+  li {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+
+    img, .team-description {
+      width: 50%;
+      float: left;
+    }
+
+    .team-description {
+      padding: 15px;
+      background-color: $whiteTrans95;
+      p, a {
+        background-color: transparent;
+        padding: 0;
+      }
+      p {
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
+    }
+
+  }
+}
 
 
 
