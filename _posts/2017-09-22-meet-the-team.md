@@ -3,10 +3,10 @@ layout: post
 date: 2017-09-21 19:51
 permalink: /meet-the-team.html
 title: 'Meet The Team'
-logline: 'The Displaced team - a group of thinkers and enthusiasts'
+logline: 'Writers, filmmakers and writers at heart'
 cover_image: 'meet-the-team.jpg'
 seoTITLE: 'Meet The Team'
-seoDESCRIPTION: 'The Displaced team - a group of thinkers and enthusiasts'
+seoDESCRIPTION: 'Writers, filmmakers and writers at heart'
 ---
 
 # Meet The Team
