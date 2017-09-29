@@ -28,8 +28,7 @@ export default {
   },
   // -------------------------------------------------------- Fetch single post
   // --------------------------------------------------------------------------
-  fetchSinglePost: function (cb) {
-    var postId = this.$route.query.id
+  fetchSinglePost: function (cb, postId) {
     axios
       .get('https://displaced.000webhostapp.com/wp-json/wp/v2/posts/' + postId + '')
       .then(response => { cb(response.data) })

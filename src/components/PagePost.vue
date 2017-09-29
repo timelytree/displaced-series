@@ -78,10 +78,18 @@ export default {
     '$route' (to, from) {
       this.loading = true
       var page = this.cE('page')[0]
+      var postId = to.query.id
       this.fetchSinglePost(response => {
         page.scrollTop = 0
-        this.loading = false
-      })
+        this.backgroundImg = response.acf.background_image.url
+        this.abstract = response.acf.abstract
+        this.title = response.title.rendered
+        this.body = response.content.rendered
+        var timeout = setTimeout(() => {
+          this.loading = false
+          clearTimeout(timeout)
+        }, 300)
+      }, postId)
     }
   },
 
@@ -93,14 +101,18 @@ export default {
   },
 
   created () {
+    var postId = this.$route.query.id
     this.loading = true
     this.fetchSinglePost(response => {
       this.backgroundImg = response.acf.background_image.url
       this.abstract = response.acf.abstract
       this.title = response.title.rendered
       this.body = response.content.rendered
-      this.loading = false
-    })
+      var timeout = setTimeout(() => {
+        this.loading = false
+        clearTimeout(timeout)
+      }, 300)
+    }, postId)
     this.fetchRecentPosts(response => {
       this.recentPosts = response
     })
