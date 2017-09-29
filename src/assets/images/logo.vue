@@ -13,15 +13,7 @@
 </template>
 
 <script>
-import methods from '../../functions/methods.js'
-
 export default {
-  name: 'Logo',
-
-  methods: methods,
-
-  created () {
-    // var chars = document.getElementById('logo').getElementsByClassName('character')
-  }
+  name: 'Logo'
 }
 </script>
