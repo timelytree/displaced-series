@@ -2,8 +2,8 @@
   <transition name="nav">
     <nav id="nav" v-if="!loading">
       <router-link to="/"><Logo id="logo" /></router-link>
-      <div id="menuB" v-on:click="showMenu = !showMenu">MENU</div>
-      <div id="menuOverlay" class="container" v-bind:class="{active: showMenu}" :style="{ 'background-image': 'url(' + menuOverlayBackgroundImg + ')' }">
+      <div id="menuB" v-on:click="showMenu">MENU</div>
+      <div id="menuOverlay" class="container" v-if="menuOpen" :style="{ 'background-image': 'url(' + menuOverlayBackgroundImg + ')' }">
         <div id="blackOverlay"></div>
         <ul class="menu-links">
           <li><router-link to="/" class="top-link">Home</router-link></li>
@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import methods from '../functions/methods.js'
+import methods from '../store/methods.js'
+import Store from '../store/Store.js'
 import Logo from '../assets/images/logo.vue'
 
 export default {
@@ -39,17 +40,9 @@ export default {
 
   data () {
     return {
-      showMenu: false,
+      menuOpen: Store.showNavMenu,
       menuOverlayBackgroundImg: '',
       recentPosts: ''
-    }
-  },
-
-  watch: {
-    '$route' (to, from) {
-      if ((this.showMenu) && (this.loading)) {
-        this.showMenu = false
-      }
     }
   },
 
@@ -57,6 +50,11 @@ export default {
     this.fetchRecentPosts(response => {
       this.recentPosts = response
     })
+  },
+
+  mounted () {
+    Store.showNavMenu = false
+    this.menuOpen = Store.showNavMenu
   }
 }
 </script>

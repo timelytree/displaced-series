@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import methods from '../functions/methods.js'
+import methods from '../store/methods.js'
 import SocialIcons from './SocialIcons.vue'
 
 export default {

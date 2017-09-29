@@ -1,5 +1,6 @@
 import moment from 'moment'
 import axios from 'axios'
+import Store from '../store/Store.js'
 
 export default {
   // -------------------------------------------------------- Utility functions
@@ -46,5 +47,15 @@ export default {
     axios
       .get('https://displaced.000webhostapp.com/wp-json/wp/v2/media/75')
       .then(response => { cb(response.data) })
+  },
+  // ---------------------------------------------------------- Menu Open/Close
+  // --------------------------------------------------------------------------
+  showMenu: function (cb, status) {
+    Store.showNavMenu = !Store.showNavMenu
+    this.menuOpen = Store.showNavMenu
+    if (status !== undefined) {
+      Store.showNavMenu = false
+      this.$children[0].menuOpen = Store.showNavMenu
+    }
   }
 }

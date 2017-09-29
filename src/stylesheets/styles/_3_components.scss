@@ -156,13 +156,13 @@
   height: calc(100% - 100px);
   background-color: black;
   // z-index: 100;
-  opacity: 0;
-  visibility: hidden;
+  // opacity: 0;
+  // visibility: hidden;
 
-  &.active {
-    opacity: 1;
-    visibility: visible;
-  }
+  // &.active {
+  //   opacity: 1;
+  //   visibility: visible;
+  // }
 
   #blackOverlay {
     position: absolute;

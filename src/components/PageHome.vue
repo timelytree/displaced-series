@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import methods from '../functions/methods.js'
+import methods from '../store/methods.js'
 import Loading from '../assets/images/loading.vue'
 import Logo from '../assets/images/logo.vue'
 import PostTile from './PostTile.vue'

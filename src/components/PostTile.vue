@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import methods from '../functions/methods.js'
+import methods from '../store/methods.js'
 
 export default {
   name: 'PostTile',

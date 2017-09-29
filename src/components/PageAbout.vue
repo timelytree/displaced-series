@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import methods from '../functions/methods.js'
+import methods from '../store/methods.js'
 import Navigation from './Navigation.vue'
 import Loading from '../assets/images/loading.vue'
 import PageFooter from './PageFooter.vue'

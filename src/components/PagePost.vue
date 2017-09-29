@@ -2,12 +2,14 @@
   <div class="page" id="postPAGE">
     <Navigation v-bind:loading="loading" />
 
-    <div class="container loading" v-if="loading" v-bind:class="{ active: loading }">
-      <Loading id="loading" />
-    </div>
+    <transition name="loading">
+      <div class="container loading" v-if="postLoading" v-bind:class="{ active: postLoading }">
+        <Loading id="loading" />
+      </div>
+    </transition>
 
     <transition name="body">
-      <div class="content" v-if="!loading">
+      <div class="content" v-if="!postLoading">
         <div class="postBackgroundImg" :style="{ 'background-image': 'url(' + backgroundImg + ')' }"></div>
 
         <div class="container">
@@ -29,7 +31,7 @@
 
         <div class="container">
           <h2 class="recent-posts-title">Recent Posts</h2>
-          <div class="post-tile-list" v-if="!loading">
+          <div class="post-tile-list" v-if="!recentPostsLoading">
             <PostTile v-for="post in recentPosts" v-bind:post="post" :key="post.id" class="active" />
           </div>
         </div>
@@ -43,7 +45,8 @@
 </template>
 
 <script>
-import methods from '../functions/methods.js'
+import methods from '../store/methods.js'
+// import Store from '../store/Store.js'
 import Navigation from './Navigation.vue'
 import PageFooter from './PageFooter.vue'
 import Loading from '../assets/images/loading.vue'
@@ -65,7 +68,9 @@ export default {
 
   data () {
     return {
-      loading: true,
+      loading: null,
+      postLoading: null,
+      recentPostsLoading: null,
       backgroundImg: '',
       abstract: '',
       title: '',
@@ -76,17 +81,18 @@ export default {
 
   watch: {
     '$route' (to, from) {
-      this.loading = true
+      this.postLoading = true
+      this.showMenu(() => {}, false)
       var page = this.cE('page')[0]
       var postId = to.query.id
       this.fetchSinglePost(response => {
-        page.scrollTop = 0
         this.backgroundImg = response.acf.background_image.url
         this.abstract = response.acf.abstract
         this.title = response.title.rendered
         this.body = response.content.rendered
         var timeout = setTimeout(() => {
-          this.loading = false
+          this.postLoading = false
+          page.scrollTop = 0
           clearTimeout(timeout)
         }, 300)
       }, postId)
@@ -103,6 +109,8 @@ export default {
   created () {
     var postId = this.$route.query.id
     this.loading = true
+    this.postLoading = true
+    this.recentPostsLoading = true
     this.fetchSinglePost(response => {
       this.backgroundImg = response.acf.background_image.url
       this.abstract = response.acf.abstract
@@ -110,11 +118,13 @@ export default {
       this.body = response.content.rendered
       var timeout = setTimeout(() => {
         this.loading = false
+        this.postLoading = false
         clearTimeout(timeout)
       }, 300)
     }, postId)
     this.fetchRecentPosts(response => {
       this.recentPosts = response
+      this.recentPostsLoading = false
     })
   }
 }
@@ -124,12 +134,25 @@ export default {
 .body-enter-active, .body-leave-active {
   transform: translateY(0);
   opacity: 1;
-  transition: 500ms;
-  transition-delay: 250ms;
+  transition: 150ms;
 }
 .body-enter, .body-leave-to {
   opacity: 0;
   transform: translateY(25px);
+}
+
+.loading-enter-active {
+  opacity: 1;
+  transition: 150ms;
+  transition-delay: 450ms;
+}
+.loading-enter, .loading-leave-to {
+  opacity: 0;
+}
+.loading-leave-active {
+  transition-delay: 0;
+  transition: 0;
+  opacity: 0;
 }
 </style>
 
