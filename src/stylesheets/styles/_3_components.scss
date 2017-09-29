@@ -1,0 +1,457 @@
+//////////////////////////////////////////////////////////////// Home Page Logo
+//-----------------------------------------------------------------------------
+@include keyframes(loadingANIM) {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.home-page-menu, .loading {
+  &.active {
+    #loading, #logo {
+      opacity: 1;
+      @include transform(translateY(0));
+    }
+  }
+
+  #logo, #loading {
+    height: 75px;
+    float: left;
+    margin-right: 50px;
+    position: relative;
+    opacity: 0;
+    transition: 150ms;
+  }
+
+  #loading {
+    @include transform(translateY(-50px));
+    .character {
+      @include animation('loadingANIM 1000ms infinite');
+      @for $i from 1 to 8 {
+        &:nth-child(#{$i}) {
+          @include animationDelay($i * 75ms !important);
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////// Loading Overlay
+//-----------------------------------------------------------------------------
+.loading {
+  @include flex-c;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 100px);
+  z-index: 100;
+  #loading {
+    margin: 0;
+  }
+}
+
+////////////////////////////////////////////////////////////////// Social Icons
+//-----------------------------------------------------------------------------
+.social-icons {
+  @include display-flex;
+  @include flex-row;
+  @include flex-middle;
+  a {
+    float: left;
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  #igLogo, #fbLogo {
+    position: relative;
+  }
+
+  #igLogo {
+    img {
+      width: 40px;
+    }
+  }
+
+  #fbLogo {
+    img {
+      width: 37px;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////// Home Top Panel
+//-----------------------------------------------------------------------------
+.topPANEL {
+  height: 38.2vh; // golden ratio
+  margin-bottom: 50px;
+  position: relative;
+
+  .home-page-menu {
+    @include display-flex;
+    @include flex-row;
+    @include flex-middle;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 1140px/2);
+
+    &.active {
+      #igLogo, #fbLogo {
+        @include transform(translateX(-15px));
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////// Nav
+//-----------------------------------------------------------------------------
+#nav {
+  @include display-flex;
+  @include flex-row;
+  @include flex-between;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+
+  #logo {
+    position: absolute;
+    width: 380px;
+    top: calc(50% - 69.5px/2);
+    left: calc(50% - 380px/2);
+    margin: 0;
+  }
+
+  #menuB {
+    @include flex-c;
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    padding-right: 25px;
+    top: 0;
+    right: 0;
+    margin: 0;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+#menuOverlay {
+  @include display-flex;
+  @include flex-column;
+  @include flex-center;
+  @include centerImage;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100px);
+  background-color: black;
+  // z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #blackOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  .menu-links {
+    @include display-flex;
+    @include flex-row;
+    @include flex-center;
+    height: 38.2vh;
+    width: 100%;
+    li {
+      list-style: none;
+    }
+  }
+
+  .top-link, .top-heading {
+    font-size: 50px;
+    line-height: 54px;
+    font-weight: 900;
+  }
+
+  .top-link {
+    color: white;
+    margin-right: 50px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .top-heading {
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 25px;
+  }
+
+  .inner-link {
+    font-size: 20px;
+    line-height: 24px;
+    color: white;
+    display: inline-block;
+    margin-bottom: 5px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // a {
+  //   @include flex-c;
+  //   // display: table;
+  //
+  //   padding: 0 12.5px;
+  //   color: white;
+  //
+  // }
+}
+
+//////////////////////////////////////////////////////////// Recent Posts Title
+//-----------------------------------------------------------------------------
+.recent-posts-title {
+  margin: 100px 0;
+  text-align: center;
+}
+
+//////////////////////////////////////////////////////////////////// Post Tiles
+//-----------------------------------------------------------------------------
+.post-tile-list {
+  @include display-flex;
+  @include flex-row;
+  @include flex-wrap;
+}
+
+.post-tile {
+  width: calc(33.333% - 16.6667px);
+  margin-right: 25px;
+  margin-bottom: 25px;
+  position: relative;
+  float: left;
+  top: 25px;
+  opacity: 0;
+  transition: 500ms;
+
+  &.active {
+    @include transform(translateY(-25px));
+    opacity: 1;
+  }
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  &:hover {
+    .post-tile-title {
+      text-decoration: underline;
+    }
+    .post-tile-thumbnail {
+
+    }
+  }
+
+  .post-tile-thumbnail {
+    @include centerImage;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding-top: 56.25%;
+    margin-bottom: 5px;
+  }
+
+  .post-tile-title {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .post-tile-date {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $gray400;
+  }
+
+  .post-tile-logline {
+    margin-top: 21px;
+  }
+}
+
+///////////////////////////////////////////////////////////////////// Post Page
+//-----------------------------------------------------------------------------
+#postPAGE {
+  .container, .container-fluid {
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
+  .inner-banner {
+    margin: 50px 0;
+    img {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  .post-text {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+
+  .postBackgroundImg {
+    @include centerImage;
+    width: 100%;
+    height: 61.8vh;
+    margin-bottom: 50px;
+  }
+
+  .postTitle {
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+
+  .postAbstract {
+    font-weight: 600;
+  }
+
+  .post-social-icons {
+    @include display-flex;
+    @include flex-column;
+    @include flex-bottom;
+    h3 {
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+    img {
+      width: 40px;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////// iframe
+//-----------------------------------------------------------------------------
+.videoWRAPPER {
+  width: 100%;
+  height: auto;
+  padding-top: 56.2%;
+  position: relative;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////// Footer
+//-----------------------------------------------------------------------------
+#footer {
+  @include display-flex;
+  @include flex-row;
+  margin-top: 100px;
+  padding: 25px 15px;
+
+  &:after {
+    content: '';
+    width: calc(100% - 30px);
+    height: 2px;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    background-color: black;
+  }
+
+  .footer-panel {
+    width: 33.333%;
+    height: 100%;
+  }
+
+  .left-panel, .right-panel {
+    .top-link, .top-heading {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      display: table;
+    }
+  }
+
+  .left-panel {
+    @include display-flex;
+    @include flex-column;
+  }
+
+  .middle-panel {
+    @include display-flex;
+    @include flex-column;
+    @include flex-middle;
+  }
+
+  .right-panel {
+    @include display-flex;
+    @include flex-column;
+    @include flex-bottom;
+    .footer-posts-list {
+      @include display-flex;
+      @include flex-column;
+      @include flex-bottom;
+      li {
+        list-style: none;
+        margin: 0;
+        .inner-link {
+          margin-bottom: 5px;
+          display: inline-block;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
