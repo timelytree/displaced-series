@@ -71,11 +71,24 @@ export default {
       loading: null,
       postLoading: null,
       recentPostsLoading: null,
+      seoTitle: '',
+      seoDescription: '',
       backgroundImg: '',
+      logline: '',
       abstract: '',
       title: '',
       body: '',
       recentPosts: {}
+    }
+  },
+
+  metaInfo () {
+    return {
+      title: this.seoTitle,
+      titleTemplate: '%s | Displaced',
+      meta: [
+        { name: 'description', content: this.seoDescription }
+      ]
     }
   },
 
@@ -87,6 +100,8 @@ export default {
       var postId = to.query.id
       this.fetchSinglePost(response => {
         this.backgroundImg = response.acf.background_image.url
+        this.seoTitle = response.acf.seo_title
+        this.seoDescription = response.acf.seo_description
         this.abstract = response.acf.abstract
         this.title = response.title.rendered
         this.body = response.content.rendered
@@ -113,6 +128,8 @@ export default {
     this.recentPostsLoading = true
     this.fetchSinglePost(response => {
       this.backgroundImg = response.acf.background_image.url
+      this.seoTitle = response.acf.seo_title
+      this.seoDescription = response.acf.seo_description
       this.abstract = response.acf.abstract
       this.title = response.title.rendered
       this.body = response.content.rendered

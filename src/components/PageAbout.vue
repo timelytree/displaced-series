@@ -46,8 +46,20 @@ export default {
   data () {
     return {
       loading: true,
+      seoTitle: '',
+      seoDescription: '',
       title: '',
       body: ''
+    }
+  },
+
+  metaInfo () {
+    return {
+      title: this.seoTitle,
+      titleTemplate: '%s | Displaced',
+      meta: [
+        { name: 'description', content: this.seoDescription }
+      ]
     }
   },
 
@@ -55,6 +67,8 @@ export default {
     var pageId = 86
     this.fetchSinglePage(response => {
       this.title = response.title.rendered
+      this.seoTitle = response.acf.seo_title
+      this.seoDescription = response.acf.seo_description
       this.body = response.content.rendered
       this.loading = false
     }, pageId)

@@ -5,6 +5,14 @@
 </template>
 
 <script>
+export default {
+  name: 'App',
+
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: 'Displaced | An Original Documentary Series'
+  }
+}
 </script>
 
 <style lang="scss">

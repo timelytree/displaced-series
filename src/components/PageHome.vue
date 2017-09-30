@@ -37,10 +37,22 @@ export default {
     PageFooter
   },
 
+  methods: methods,
+
   data () {
     return {
       loading: true,
       posts: {}
+    }
+  },
+
+  metaInfo () {
+    return {
+      title: 'Displaced | An Original Documentary Series',
+      titleTemplate: null,
+      meta: [
+        { name: 'description', content: 'An original documentary series that delves into the wild, beautifully chaotic lives of modern refugees.' }
+      ]
     }
   },
 
@@ -55,8 +67,6 @@ export default {
       return posts
     }
   },
-
-  methods: methods,
 
   created () {
     this.fetchAllPosts(response => {
