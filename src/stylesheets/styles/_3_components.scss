@@ -366,6 +366,7 @@
   @include flex-row;
   margin-top: 100px;
   padding: 25px 15px;
+  position: relative;
 
   &:after {
     content: '';
