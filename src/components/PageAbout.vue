@@ -76,7 +76,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .body-enter-active, .body-leave-active {
   transform: translateY(0);
   opacity: 1;

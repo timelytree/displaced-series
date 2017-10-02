@@ -3,7 +3,7 @@
     <nav id="nav" v-if="!loading">
       <router-link to="/"><Logo id="logo" /></router-link>
       <div id="menuB" v-on:click="showMenu">MENU</div>
-      <div id="menuOverlay" class="container" v-if="menuOpen" :style="{ 'background-image': 'url(' + menuOverlayBackgroundImg + ')' }">
+      <div id="menuOverlay" v-if="menuOpen" :style="{ 'background-image': 'url(' + menuOverlayBackgroundImg + ')' }">
         <div id="blackOverlay"></div>
         <ul class="menu-links">
           <li><router-link to="/" class="top-link">Home</router-link></li>
@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../stylesheets/base/variables.scss';
 
 .nav-enter-active, .nav-leave-active {
