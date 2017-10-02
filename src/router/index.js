@@ -24,6 +24,14 @@ export default new Router({
       path: '/story/:slug',
       name: 'PagePost',
       component: PagePost
+    },
+    {
+      path: '/admin',
+      beforeEnter: (to, from, next) => {
+        var win = window.open('http://67.207.85.161/displaced/wp-admin', '_blank')
+        win.focus()
+        next(false)
+      }
     }
   ]
 })
