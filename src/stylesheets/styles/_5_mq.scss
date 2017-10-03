@@ -175,8 +175,8 @@
 
   #nav {
     #logo {
-      height: 25px;
-      top: calc(50% - 25px/2);
+      height: 35px;
+      top: calc(50% - 35px/2);
       left: 15px;
       width: auto;
     }
@@ -216,6 +216,12 @@
     .post-tile {
       &:last-child {
         display: block;
+      }
+    }
+    .meet-the-team-row {
+      .col-sm-3 {
+        padding: 0;
+        margin-bottom: 2.5px;
       }
     }
     .telus-storyhive-competition-row {
