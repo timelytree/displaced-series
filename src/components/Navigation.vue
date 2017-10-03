@@ -2,7 +2,10 @@
   <transition name="nav">
     <nav id="nav" v-if="!loading">
       <router-link to="/"><Logo id="logo" /></router-link>
-      <div id="menuB" v-on:click="showMenu">MENU</div>
+      <div id="menuB" v-on:click="showMenu">
+        <img v-if="!menuOpen" src="../assets/images/menu_icon_black.svg" />
+        <img v-else="menuOpen" src="../assets/images/close_icon_black.svg" />
+      </div>
       <div id="menuOverlay" v-if="menuOpen" :style="{ 'background-image': 'url(' + menuOverlayBackgroundImg + ')' }">
         <div id="blackOverlay"></div>
         <ul class="menu-links">

@@ -20,7 +20,13 @@
             </div>
             <div class="col-sm-6 post-social-icons">
               <h3>Share This Post</h3>
-              <a :href="postPath" target="_blank"><img src="../assets/images/facebook_icon_black.svg" /></a>
+              <a :href="facebookPath" target="_blank"><img src="../assets/images/facebook_icon_black.svg" /></a>
+              <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false">
+                <img src="../assets/images/reddit_icon_black.svg" />
+              </a>
+              <a :href="'mailto:?subject=A%20Displaced%20Story&body=' + emailBody + ''">
+                <img src="../assets/images/email_icon_black.svg" />
+              </a>
             </div>
           </div>
         </div>
@@ -115,8 +121,12 @@ export default {
   },
 
   computed: {
-    postPath: function () {
+    facebookPath: function () {
       var path = 'http://www.facebook.com/share.php?u=http://displacedseries.com/#' + this.$route.fullPath
+      return path
+    },
+    emailBody: function () {
+      var path = 'http://displacedseries.com/#' + this.$route.fullPath
       return path
     }
   },

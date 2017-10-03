@@ -8,6 +8,7 @@
 
     <div class="footer-panel middle-panel">
       <SocialIcons />
+      <a id="logoMOOG" href="https://www.moogmedia.ca">A <img src="../assets/images/logoMOOG.svg" />production</a>
     </div>
 
     <div class="footer-panel right-panel">

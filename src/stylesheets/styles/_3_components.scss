@@ -16,7 +16,7 @@
   #logo, #loading {
     height: 75px;
     float: left;
-    margin-right: 50px;
+    margin-right: 25px;
     position: relative;
     opacity: 0;
     transition: 150ms;
@@ -64,19 +64,25 @@
     }
   }
 
-  #igLogo, #fbLogo {
+  #igLogo, #fbLogo, #ytLogo {
     position: relative;
   }
 
   #igLogo {
     img {
-      width: 40px;
+      width: 30px;
     }
   }
 
   #fbLogo {
     img {
-      width: 37px;
+      width: 28px;
+    }
+  }
+
+  #ytLogo {
+    img {
+      width: 30px;
     }
   }
 }
@@ -98,9 +104,14 @@
 
     &.active {
       #igLogo, #fbLogo {
-        @include transform(translateX(-15px));
         opacity: 1;
       }
+    }
+
+    .social-icons {
+      position: absolute;
+      right: 15px;
+      top: calc(50% - 30px/2);
     }
   }
 }
@@ -138,8 +149,8 @@
     right: 0;
     margin: 0;
     cursor: pointer;
-    &:hover {
-      text-decoration: underline;
+    img {
+      width: 30px;
     }
   }
 }
@@ -206,15 +217,6 @@
       text-decoration: underline;
     }
   }
-
-  // a {
-  //   @include flex-c;
-  //   // display: table;
-  //
-  //   padding: 0 12.5px;
-  //   color: white;
-  //
-  // }
 }
 
 //////////////////////////////////////////////////////////// Recent Posts Title
@@ -222,6 +224,7 @@
 .recent-posts-title {
   margin: 100px 0;
   text-align: center;
+  text-transform: uppercase;
 }
 
 //////////////////////////////////////////////////////////////////// Post Tiles
@@ -251,12 +254,10 @@
     margin-right: 0;
   }
 
-  &:hover {
+  &:hover, &:focus, &:active {
+    text-decoration: none;
     .post-tile-title {
       text-decoration: underline;
-    }
-    .post-tile-thumbnail {
-
     }
   }
 
@@ -306,10 +307,18 @@
     }
   }
 
+  .postTitle, .postAbstract {
+    // font-family: $font2;
+    font-weight: 300;
+  }
+
   .post-text {
     -moz-column-count: 3;
     -webkit-column-count: 3;
     column-count: 3;
+    p, h1, h2, h3, h4, h5, h6, ul, li, div, a, section {
+      // font-family: $font2;
+    }
   }
 
   .postBackgroundImg {
@@ -337,8 +346,11 @@
       font-weight: 600;
       margin-bottom: 25px;
     }
+    a {
+      margin-bottom: 15px;
+    }
     img {
-      width: 40px;
+      width: 30px;
     }
   }
 }
@@ -391,6 +403,7 @@
       text-transform: uppercase;
       margin-bottom: 5px;
       display: table;
+      color: black;
     }
   }
 
@@ -403,6 +416,21 @@
     @include display-flex;
     @include flex-column;
     @include flex-middle;
+    .social-icons {
+      margin-bottom: 15px;
+    }
+    #logoMOOG {
+      @include display-flex;
+      @include flex-row;
+      @include flex-center;
+      color: black;
+      font-weight: 600;
+      text-transform: uppercase;
+      img {
+        height: 15px;
+        margin: 0 10px;
+      }
+    }
   }
 
   .right-panel {
@@ -417,8 +445,8 @@
         list-style: none;
         margin: 0;
         .inner-link {
-          margin-bottom: 5px;
-          display: inline-block;
+          // margin-bottom: 5px;
+          color: black;
           &:hover {
             text-decoration: underline;
           }

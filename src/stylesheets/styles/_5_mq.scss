@@ -18,6 +18,15 @@
       left: calc(50% - 720px/2);
     }
   }
+
+  // CUSTOM
+  #postPAGE {
+    .post-text {
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
+    }
+  }
 }
 
 /////////////////////////////////////////////////////////////////////// < 737px
@@ -25,6 +34,7 @@
 @media only screen and (max-width: 737px) {
   .topPANEL {
     width: 100%;
+    margin-bottom: 15px;
     .home-page-menu {
       left: 0;
     }
@@ -58,8 +68,15 @@
   }
 
   .home-page-menu, .loading {
+    width: 100%;
     #logo, #loading {
       height: 50px;
+    }
+  }
+
+  .social-icons {
+    a {
+      margin-right: 10px;
     }
   }
 
@@ -80,10 +97,36 @@
   }
 
   #footer {
+    @include flex-column;
     margin-top: 25px;
+    .footer-panel {
+      @include flex-middle;
+      @include flex-center;
+      width: 100%;
+      margin-bottom: 50px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .right-panel {
+      .footer-posts-list {
+        @include flex-middle;
+      }
+    }
   }
 
   // CUSTOM
+  #homePAGE {
+    #logo {
+      margin-right: 20px;
+    }
+
+    #home-subtitle {
+      font-size: 14px;
+      line-height: 12px;
+    }
+  }
+
   #aboutPAGE {
     .about-text {
       width: 100%;
@@ -92,10 +135,14 @@
 
   #postPAGE {
     .post-social-icons {
-      @include flex-top;
+      display: block;
       margin-top: 50px;
       h3 {
         margin-bottom: 15px;
+      }
+      a {
+        margin-bottom: 0;
+        margin-right: 10px;
       }
     }
     .post-text {
@@ -116,9 +163,13 @@
 //-----------------------------------------------------------------------------
 @media only screen and (max-width: 415px) {
   .topPANEL {
+    margin-bottom: 15px;
     .home-page-menu {
       @include flex-column;
       @include flex-top;
+      .social-icons {
+        position: static;
+      }
     }
   }
 
@@ -137,11 +188,6 @@
 
   .social-icons {
     position: relative;
-    left: 15px;
-    margin-top: 15px;
-    a {
-      margin-right: 10px;
-    }
   }
 
   .home-page-menu, .loading {
@@ -156,33 +202,25 @@
     margin-right: 0;
   }
 
-  #footer {
-    @include flex-column;
-    .footer-panel {
-      @include flex-middle;
-      @include flex-center;
-      width: 100%;
-      margin-bottom: 50px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    .social-icons {
-      left: 0;
-      margin: 0;
-    }
-    .right-panel {
-      .footer-posts-list {
-        @include flex-middle;
+  // CUSTOM
+  #homePAGE {
+    #home-subtitle {
+      margin: 15px 0;
+      br {
+        display: none
       }
     }
   }
 
-  // CUSTOM
   #postPAGE {
     .post-tile {
       &:last-child {
         display: block;
+      }
+    }
+    .telus-storyhive-competition-row {
+      img {
+        width: 100%;
       }
     }
   }

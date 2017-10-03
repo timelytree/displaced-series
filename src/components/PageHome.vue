@@ -6,6 +6,7 @@
       </div>
       <div class="home-page-menu container" v-if="!loading" v-bind:class="{ active: !loading }">
         <Logo id="logo" />
+        <h1 id="home-subtitle">An <br />Original <br />Documentary <br />Series</h1>
         <SocialIcons />
       </div>
     </div>
