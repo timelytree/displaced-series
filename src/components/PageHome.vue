@@ -73,18 +73,21 @@ export default {
     this.fetchAllPosts(response => {
       this.posts = response
       this.loading = false
-      var posts = this.cE('post-tile')
-      var num1 = 0
-      var num2 = 150
-      var interval = setInterval(() => {
-        if (num1 < 5) {
-          this.addC(posts[num1], 'active')
-          num1 += 1
-          num2 += 25
-        } else {
-          clearInterval(interval)
-        }
-      }, num2)
+      var timeout = setTimeout(() => {
+        clearTimeout(timeout)
+        var posts = this.cE('post-tile')
+        var num1 = 0
+        var num2 = 150
+        var interval = setInterval(() => {
+          if (num1 < posts.length) {
+            this.addC(posts[num1], 'active')
+            num1 += 1
+            num2 += 25
+          } else {
+            clearInterval(interval)
+          }
+        }, num2)
+      })
     })
   }
 }
