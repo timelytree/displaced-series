@@ -31,6 +31,12 @@
           </div>
         </div>
 
+        <div class="container waterfall" v-if="waterfall">
+          <masonry :cols="{ default: 4, 737: 2, 415: 1 }" :gutter="5">
+            <img class="waterfall-img" :src="item.guid" v-for="item in waterfall" />
+          </masonry>
+        </div>
+
         <div class="container">
           <div class="postBody" v-html="body"></div>
         </div>
@@ -84,6 +90,7 @@ export default {
       abstract: '',
       title: '',
       body: '',
+      waterfall: false,
       recentPosts: {}
     }
   },
@@ -143,6 +150,8 @@ export default {
       this.abstract = response.acf.abstract
       this.title = response.title.rendered
       this.body = response.content.rendered
+      this.waterfall = response.waterfall
+      console.log(response)
       var timeout = setTimeout(() => {
         this.loading = false
         this.postLoading = false
@@ -180,6 +189,15 @@ export default {
   transition-delay: 0;
   transition: 0;
   opacity: 0;
+}
+
+.waterfall {
+  margin: 50px auto;
+}
+
+.waterfall-img {
+  width: 100%;
+  margin-bottom: 5px;
 }
 </style>
 

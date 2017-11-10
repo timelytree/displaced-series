@@ -3,10 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import VueAnalytics from 'vue-analytics'
+import VueMasonry from 'vue-masonry-css'
 import router from './router'
 import '../node_modules/bootstrap/scss/bootstrap.scss'
 import './stylesheets/main.scss'
 
+Vue.use(VueMasonry)
 Vue.config.productionTip = false
 if (window.location.hostname !== 'localhost') {
   Vue.use(VueAnalytics, {
