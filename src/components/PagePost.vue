@@ -129,11 +129,11 @@ export default {
 
   computed: {
     facebookPath: function () {
-      var path = 'http://www.facebook.com/share.php?u=http://displacedseries.com/#' + this.$route.fullPath
+      var path = 'https://www.facebook.com/share.php?u=https://displacedseries.com/#' + this.$route.fullPath
       return path
     },
     emailBody: function () {
-      var path = 'http://displacedseries.com/#' + this.$route.fullPath
+      var path = 'https://displacedseries.com/#' + this.$route.fullPath
       return path
     }
   },
