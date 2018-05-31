@@ -17,35 +17,35 @@ export default {
   // --------------------------------------------------------------------------
   fetchSinglePage: function (cb, pageId) {
     axios
-      .get('https://67.207.85.161/displaced/wp-json/wp/v2/pages/' + pageId + '')
+      .get('https://redwoodapps.com/displaced/wp-json/wp/v2/pages/' + pageId + '')
       .then(response => { cb(response.data) })
   },
   // ---------------------------------------------------- Fetch home page posts
   // --------------------------------------------------------------------------
   fetchAllPosts: function (cb) {
     axios
-      .get('https://67.207.85.161/displaced/wp-json/wp/v2/posts')
+      .get('https://redwoodapps.com/displaced/wp-json/wp/v2/posts')
       .then(response => { cb(response.data) })
   },
   // -------------------------------------------------------- Fetch single post
   // --------------------------------------------------------------------------
   fetchSinglePost: function (cb, postId) {
     axios
-      .get('https://67.207.85.161/displaced/wp-json/wp/v2/posts/' + postId + '')
+      .get('https://redwoodapps.com/displaced/wp-json/wp/v2/posts/' + postId + '')
       .then(response => { cb(response.data) })
   },
   // ------------------------------------------------------- Fetch recent posts
   // --------------------------------------------------------------------------
   fetchRecentPosts: function (cb) {
     axios
-      .get('https://67.207.85.161/displaced/wp-json/wp/v2/posts?per_page=3')
+      .get('https://redwoodapps.com/displaced/wp-json/wp/v2/posts?per_page=3')
       .then(response => { cb(response.data) })
   },
   // -------------------------------------- Fetch gif for menu background image
   // --------------------------------------------------------------------------
   fetchMenuOverlayBackgroundImg: function (cb) {
     axios
-      .get('https://67.207.85.161/displaced/wp-json/wp/v2/media/75')
+      .get('https://redwoodapps.com/displaced/wp-json/wp/v2/media/75')
       .then(response => { cb(response.data) })
   },
   // ---------------------------------------------------------- Menu Open/Close
