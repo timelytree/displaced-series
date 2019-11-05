@@ -1,33 +1,47 @@
-# displaced
+# REQUIREMENTS
+- The `pages` directory should only contain `index.vue` (Home Page) and `_.vue` (Any and all other pages)
+- npm i --save-dev node-sass sass-loader @nuxtjs/style-resources
 
-> A Vue.js project
+```js
+export default {
+  modules: ['@nuxtjs/style-resources'],
+  styleResources: {
+    scss: [
+      './assets/vars/*.scss',
+      './assets/abstracts/_mixins.scss' // use underscore "_" & also file extension ".scss"
+    ]
+  }
+}
+```
+
+# RESOURCES
+https://www.toptal.com/vue-js/server-side-rendered-vue-js-using-nuxt-js
+https://medium.com/@moustachedesign/creating-a-website-with-nuxt-js-and-wordpress-rest-api-51cf66599cf3
+https://medium.com/@fadingdust/review-of-wordpress-and-vue-js-router-edition-de0d0662c0b8
+https://github.com/srhise/nuxt-wordpress-pwa
+https://www.reddit.com/r/vuejs/comments/anmmlx/handling_a_vue_site_using_wordpress_as_a/
+
+# POTENTIAL DIFFICULTIES
+https://nuxtjs.org/guide/routing/#unknown-dynamic-nested-routes
+
+# OTHER
+https://stackoverflow.com/questions/34764287/turning-off-eslint-rule-for-a-specific-file
+
+--------------------------------------------------------------------------------
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+$ npm run install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-# build for production with minification
-npm run build
+# build for production and launch server
+$ npm run build
+$ npm run start
 
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+# generate static project
+$ npm run generate
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-# Utilities
-Vue Meta: https://github.com/declandewet/vue-meta#meta-object
