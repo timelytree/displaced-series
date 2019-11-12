@@ -28,20 +28,25 @@ https://nuxtjs.org/guide/routing/#unknown-dynamic-nested-routes
 https://stackoverflow.com/questions/34764287/turning-off-eslint-rule-for-a-specific-file
 
 --------------------------------------------------------------------------------
-
-## Build Setup
-
+## Production Setup
+- Point domain name to server
+- Set up proxy pass
 ``` bash
-# install dependencies
-$ npm run install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
 ```
+
+## Build Update
+- `git pull origin master`
+- `npm run build`
+- `pm2 restart displacedseries-nuxt`
+
+## Production Setup
+- Adding a remote URL: `git remote add origin git@github.com:timelytree/displaced-series.git`
