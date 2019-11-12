@@ -20,7 +20,15 @@ export default {
   },
   // /////////////////////////////////////////////////////// Headers of the Page
   // ---------------------------------------------------------------------------
-  backendBaseUrl: 'http://displacedseries.redwoodapps.com/',
+  backendBaseUrl: (function () {
+    var env = process.env.NODE_ENV
+    var url = ''
+    switch (env) {
+      case 'development': url = '//modify.displacedseries.com'; break
+      case 'staging': url = '//modify.displacedseries.com'; break
+      case 'production': url = '//modify.displacedseries.com'; break
+    } return url
+  }()),
   // ////////////////////////////////////////// Customize the progress-bar color
   // ---------------------------------------------------------------------------
   loading: { color: '#000000' },
