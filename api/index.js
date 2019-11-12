@@ -3,8 +3,6 @@ import NuxtConfig from '@/nuxt.config.js'
 
 const baseUrl = NuxtConfig.backendBaseUrl
 
-console.log(baseUrl + '/api/core/v2/menus')
-
 export default {
   // /////////////////////////////////////////////////////// Get Navigation List
   // ---------------------------------------------------------------------------

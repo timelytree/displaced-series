@@ -1,10 +1,61 @@
 <template>
-  <div class="social-icons">
-    <a id="igLogo" href="https://www.instagram.com/displacedseries" target="_blank"><img src="../assets/images/instagram_icon_black.svg" /></a>
-    <a id="fbLogo" href="https://www.facebook.com/displacedseries" target="_blank"><img src="../assets/images/facebook_icon_black.svg" /></a>
-    <a id="ytLogo" href="https://www.youtube.com/channel/UCSby_9cMuq2nMgONdel8k3A" target="_blank"><img src="../assets/images/youtube_icon_black.svg" /></a>
+  <div
+    v-if="instagramUrl || facebookUrl || youtubeUrl"
+    class="social-icons">
+
+    <a
+      v-if="instagramUrl"
+      id="igLogo"
+      :href="instagramUrl"
+      target="_blank">
+      <img src="../assets/images/instagram_icon_black.svg" />
+    </a>
+
+    <a
+      v-if="facebookUrl"
+      id="fbLogo"
+      :href="facebookUrl"
+      target="_blank">
+      <img src="../assets/images/facebook_icon_black.svg" />
+    </a>
+
+    <a
+      v-if="youtubeUrl"
+      id="ytLogo"
+      :href="youtubeUrl"
+      target="_blank">
+      <img src="../assets/images/youtube_icon_black.svg" />
+    </a>
+
   </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters({
+      siteOptions: 'global/siteOptions'
+    }),
+    instagramUrl () {
+      const url = this.siteOptions.instagram_url
+      if (url !== '') { return url }
+      return false
+    },
+    facebookUrl () {
+      const url = this.siteOptions.facebook_url
+      if (url !== '') { return url }
+      return false
+    },
+    youtubeUrl () {
+      const url = this.siteOptions.youtube_url
+      if (url !== '') { return url }
+      return false
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .social-icons {
