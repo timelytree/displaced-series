@@ -40,6 +40,18 @@ export default {
         return { error }
       })
   },
+  // /////////////////////////////////////////////////////////// Get Single Post
+  // ---------------------------------------------------------------------------
+  getSinglePost (slug) {
+    return Axios
+      .get(baseUrl + 'api/core/v2/post/' + slug)
+      .then((response) => {
+        return response.data
+      })
+      .catch((error) => {
+        return { error }
+      })
+  },
   // ///////////////////////////////////////////////////////// Get All CPT Posts
   // ---------------------------------------------------------------------------
   getAllCptPosts (cptName) {

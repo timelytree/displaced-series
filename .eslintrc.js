@@ -28,6 +28,7 @@ module.exports = {
     'no-trailing-spaces': ['error', {
       'skipBlankLines': true
     }],
-    'vue/html-self-closing': 'off'
+    'vue/html-self-closing': 'off',
+    'vue/no-v-html': 'off'
   }
 }

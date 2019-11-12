@@ -40,4 +40,13 @@ export default ({ store, app }, inject) => {
     urlBreakdown.domain = domain
     return urlBreakdown
   })
+  // /////////////////////////////////////////////////////////// Parse Video URL
+  // ---------------------------------- https://gist.github.com/yangshun/9892961
+  inject('parseVideoUrl', (url) => {
+    url.match(/(http:|https:|)\/\/(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(&\S+)?/)
+    let type = ''
+    if (RegExp.$3.includes('youtu')) { type = 'youtube' }
+    if (RegExp.$3.includes('vimeo')) { type = 'vimeo' }
+    return { type, id: RegExp.$6 }
+  })
 }
