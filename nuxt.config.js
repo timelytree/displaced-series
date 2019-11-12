@@ -51,6 +51,11 @@ export default {
     // Doc: https://github.com/nuxt-community/style-resources-module/
     '@nuxtjs/style-resources'
   ],
+  // /////////////////////////////////////////////////////// Router + Middleware
+  // ---------------------------------------------------------------------------
+  router: {
+    middleware: 'scroll-page'
+  },
   // //////////////////////////////////////////////// Axios module configuration
   // -------------------------------------- See https://axios.nuxtjs.org/options
   axios: {
