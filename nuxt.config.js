@@ -21,12 +21,12 @@ export default {
   // /////////////////////////////////////////////////////// Headers of the Page
   // ---------------------------------------------------------------------------
   backendBaseUrl: (function () {
-    var env = process.env.NODE_ENV
-    var url = ''
+    const env = process.env.NODE_ENV
+    let url = ''
     switch (env) {
-      case 'development': url = '//modify.displacedseries.com'; break
-      case 'staging': url = '//modify.displacedseries.com'; break
-      case 'production': url = '//modify.displacedseries.com'; break
+      case 'development': url = 'http://modify.displacedseries.com'; break
+      case 'staging': url = 'http://modify.displacedseries.com'; break
+      case 'production': url = 'http://modify.displacedseries.com'; break
     } return url
   }()),
   // ////////////////////////////////////////// Customize the progress-bar color

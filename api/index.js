@@ -3,12 +3,14 @@ import NuxtConfig from '@/nuxt.config.js'
 
 const baseUrl = NuxtConfig.backendBaseUrl
 
+console.log(baseUrl + '/api/core/v2/menus')
+
 export default {
   // /////////////////////////////////////////////////////// Get Navigation List
   // ---------------------------------------------------------------------------
   getNavigationList () {
     return Axios
-      .get(baseUrl + 'api/core/v2/menus')
+      .get(baseUrl + '/api/core/v2/menus')
       .then((response) => {
         return response.data
       })
@@ -20,7 +22,7 @@ export default {
   // ---------------------------------------------------------------------------
   getSiteOptions () {
     return Axios
-      .get(baseUrl + 'api/core/v2/site-options')
+      .get(baseUrl + '/api/core/v2/site-options')
       .then((response) => {
         return response.data
       })
@@ -32,7 +34,7 @@ export default {
   // ---------------------------------------------------------------------------
   getSinglePage (slug) {
     return Axios
-      .get(baseUrl + 'api/core/v2/page/' + slug)
+      .get(baseUrl + '/api/core/v2/page/' + slug)
       .then((response) => {
         return response.data
       })
@@ -44,7 +46,7 @@ export default {
   // ---------------------------------------------------------------------------
   getSinglePost (slug) {
     return Axios
-      .get(baseUrl + 'api/core/v2/post/' + slug)
+      .get(baseUrl + '/api/core/v2/post/' + slug)
       .then((response) => {
         return response.data
       })
@@ -56,7 +58,7 @@ export default {
   // ---------------------------------------------------------------------------
   getAllCptPosts (cptName) {
     return Axios
-      .get(baseUrl + 'api/core/v2/cpt/' + cptName)
+      .get(baseUrl + '/api/core/v2/cpt/' + cptName)
       .then((response) => {
         return response.data
       })
