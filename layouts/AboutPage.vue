@@ -45,10 +45,6 @@ export default {
       if (people.length > 0) { return people }
       return false
     }
-  },
-
-  mounted () {
-    console.log(this.page)
   }
 }
 </script>

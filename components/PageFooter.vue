@@ -4,12 +4,13 @@
       <div class="footer-content">
 
         <div class="footer-panel left-panel">
-          <nuxt-link to="/" class="top-link">
-            Home
+          <nuxt-link
+            v-for="item in footerMenuItems"
+            :key="item.ID"
+            :to="item.slug === 'home' ? '/' : ('/' + item.slug)"
+            class="top-link">
+            {{ item.title }}
           </nuxt-link>
-          <div class="top-link">
-            About
-          </div>
         </div>
 
         <div class="footer-panel middle-panel">
@@ -51,6 +52,17 @@ export default {
     recentPosts: {
       type: Array,
       required: true
+    }
+  },
+
+  computed: {
+    footerMenu () {
+      return this.$getMenu('Footer Menu')
+    },
+    footerMenuItems () {
+      const items = this.footerMenu.items
+      if (items.length > 0) { return items }
+      return false
     }
   }
 }

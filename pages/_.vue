@@ -72,7 +72,6 @@ export default {
 
   async asyncData ({ params, error }) {
     const post = await Api.getSinglePost(params.pathMatch)
-    console.log(post.post_type)
     if (post.post_type === 'page') {
       return { page: post }
     } else if (post.post_type === 'post') {
