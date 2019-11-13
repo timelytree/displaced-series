@@ -75,6 +75,10 @@ export default {
   margin-top: 3rem;
   padding: 2rem 0;
   position: relative;
+  @include small {
+    flex-direction: column;
+    align-items: center;
+  }
   &:after {
     content: '';
     width: 100%;
@@ -89,6 +93,9 @@ export default {
 .footer-panel {
   width: 33.333%;
   height: 100%;
+  @include small {
+    width: 100%;
+  }
 }
 
 .left-panel, .right-panel {
@@ -106,22 +113,34 @@ export default {
 .left-panel {
   display: flex;
   flex-direction: column;
+  @include small {
+    align-items: center;
+  }
 }
 
 .middle-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include small {
+    margin-bottom: 3rem;
+  }
 }
 
 .right-panel {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @include small {
+    align-items: center;
+  }
 }
 
 .social-icons {
   margin-bottom: 2rem;
+  @include small {
+    margin-bottom: 1rem;
+  }
 }
 
 #moog-logo-footer {
@@ -141,6 +160,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @include small {
+    align-items: center;
+  }
   li {
     list-style: none;
     margin: 0;
