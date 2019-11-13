@@ -1,7 +1,7 @@
 <template>
   <footer id="footer" class="grid">
     <div class="col">
-      <div class="footer-content">
+      <div :class="['footer-content', recentPosts.length > 0 ? '' : 'no-recent-posts']">
 
         <div class="footer-panel left-panel">
           <nuxt-link
@@ -20,7 +20,7 @@
           </a>
         </div>
 
-        <div class="footer-panel right-panel">
+        <div v-if="recentPosts.length > 0" class="footer-panel right-panel">
           <h3 class="top-heading">
             Recent Posts
           </h3>
@@ -51,7 +51,8 @@ export default {
   props: {
     recentPosts: {
       type: Array,
-      required: true
+      default: () => [],
+      required: false
     }
   },
 
@@ -87,6 +88,20 @@ export default {
     top: 0;
     left: 0;
     background-color: black;
+  }
+  &.no-recent-posts {
+    justify-content: space-between;
+    .middle-panel {
+      align-items: flex-end;
+      @include small {
+        align-items: center;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      .social-icons {
+        display: none;
+      }
+    }
   }
 }
 
