@@ -13,7 +13,7 @@
     <div v-if="!loading" class="container">
       <div class="grid">
         <PostTile
-          v-for="post in postList"
+          v-for="post in truncatedPostList"
           :key="post.id"
           :post="post"
           class="col-4_ti-12_mi-6"
@@ -63,6 +63,7 @@ export default {
   data () {
     return {
       loading: true,
+      page: false,
       postTileCount: 0,
       postTilesMounted: []
     }
@@ -72,9 +73,23 @@ export default {
     ...mapGetters({
       postList: 'posts/postList'
     }),
+    truncatedPostList () {
+      const postList = CloneDeep(this.postList)
+      const page = this.page
+      const listType = page.metadata.number_of_posts.all_vs_limited
+      const postsToShow = page.metadata.number_of_posts.number_of_posts
+      if (postList.length > 0) {
+        if (listType === 'limited') {
+          postList.length = postsToShow
+          return postList
+        }
+        return postList
+      }
+      return false
+    },
     recentPosts () {
       const postList = CloneDeep(this.postList)
-      if (postList) {
+      if (postList.length > 0) {
         postList.length = 3
         return postList
       }
@@ -91,6 +106,11 @@ export default {
     }
   },
 
+  async asyncData ({ params, error }) {
+    const page = await Api.getSinglePage('home')
+    return { page }
+  },
+
   async fetch ({ store, params }) {
     const navigationList = await Api.getNavigationList()
     const siteOptions = await Api.getSiteOptions()
@@ -101,10 +121,10 @@ export default {
   },
 
   mounted () {
-    const postList = this.postList
-    if (Object.keys(postList).length > 0) {
+    const truncatedPostList = this.truncatedPostList
+    if (Object.keys(truncatedPostList).length > 0) {
       this.loading = false
-      this.postTileCount = postList.length
+      this.postTileCount = truncatedPostList.length
     }
   },
 
