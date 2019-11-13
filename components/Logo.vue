@@ -13,46 +13,11 @@
 </template>
 
 <style lang="scss" scoped>
-// @include keyframes(loadingANIM) {
-//   0% { opacity: 1; }
-//   100% { opacity: 0; }
-// }
-
 #logo {
   height: 5rem;
-  float: left;
-  margin-right: 25px;
-  position: relative;
-  transition: 150ms;
+  @include tiny {
+    height: auto;
+    width: 100%;
+  }
 }
-
-// .home-page-menu, .loading {
-//   &.active {
-//     #loading, #logo {
-//       opacity: 1;
-//       @include transform(translateY(0));
-//     }
-//   }
-//
-//   #logo, #loading {
-//     height: 75px;
-//     float: left;
-//     margin-right: 25px;
-//     position: relative;
-//     opacity: 0;
-//     transition: 150ms;
-//   }
-//
-//   #loading {
-//     @include transform(translateY(-50px));
-//     .character {
-//       @include animation('loadingANIM 1000ms infinite');
-//       @for $i from 1 to 8 {
-//         &:nth-child(#{$i}) {
-//           @include animationDelay($i * 75ms !important);
-//         }
-//       }
-//     }
-//   }
-// }
 </style>

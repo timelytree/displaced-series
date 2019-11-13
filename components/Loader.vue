@@ -1,5 +1,5 @@
 <template>
-  <svg class="loader-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848.8 207">
+  <svg id="loader-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848.8 207">
     <path id="character1" class="character" d="M0,203.7V3.2h28.9v172.1H75v28.5H0z" />
     <path id="character2" class="character" d="M204.9,164.8c0,28.1-13.9,42.2-41.6,42.2c-27.7,0-41.5-14.1-41.5-42.2V42.1C121.8,14,135.6,0,163.3,0 c27.7,0,41.6,14,41.6,42.1V164.8z M176,42.1c0-9-4.2-13.5-12.6-13.6h-0.2c-8.3,0-12.5,4.5-12.5,13.6v122.7c0,9.1,4.2,13.6,12.6,13.6 c8.5,0,12.7-4.5,12.7-13.6V42.1z" />
     <path id="character3" class="character" d="M341.5,132.6l9.4,71.2h-29.2l-5.6-42.5h-29.5l-5.7,42.5h-29.1l9.4-70.8L281.5,3.2h39.7L341.5,132.6z M312.3,132.6l-11-83.4 l-11,83.4H312.3z" />
@@ -16,12 +16,11 @@
   100% { opacity: 0; }
 }
 
-.loader-svg {
+#loader-svg {
   height: 5rem;
-  float: left;
-  margin-right: 25px;
-  position: relative;
-  transition: 150ms;
+  @include small {
+    height: 3rem;
+  }
 }
 
 .character {
@@ -32,27 +31,4 @@
     }
   }
 }
-
-// .home-page-menu, .loading {
-//   &.active {
-//     #loading, #logo {
-//       opacity: 1;
-//       @include transform(translateY(0));
-//     }
-//   }
-//
-//   #logo, #loading {
-//     height: 75px;
-//     float: left;
-//     margin-right: 25px;
-//     position: relative;
-//     opacity: 0;
-//     transition: 150ms;
-//   }
-//
-//   #loading {
-//     @include transform(translateY(-50px));
-//
-//   }
-// }
 </style>

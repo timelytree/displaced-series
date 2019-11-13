@@ -1,8 +1,11 @@
 {
-  "name": "liquidmedia-p2",
+  "name": "displaced-series",
   "version": "1.0.0",
-  "description": "Liquid Media Group Website",
-  "author": "Nauras Jabari",
+  "description": "Displaced Series - An Undocumented Documentary Series",
+  "author": {
+    "name": "Nauras Jabari",
+    "email": "nauras@moogmedia.ca"
+  },
   "private": true,
   "scripts": {
     "dev": "nuxt",

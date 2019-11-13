@@ -11,7 +11,7 @@
           v-for="post in postList"
           :key="post.id"
           :post="post"
-          class="col-4 active" />
+          class="col-4_ti-12_mi-6 active" />
       </div>
 
     </div>

@@ -13,7 +13,7 @@
     <div v-if="!loading" :style="{ 'background-image': 'url(' + featuredImage + ')' }" class="banner"></div>
 
     <div v-if="!loading" class="grid">
-      <div class="col-6">
+      <div class="col-6_sm-10">
         <h1 class="title">
           {{ title }}
         </h1>
@@ -25,7 +25,7 @@
 
     <div v-if="!loading" class="content">
       <div v-if="contentBannerItem" :class="[contentBannerAlignment !== 'left' ? 'grid-' + contentBannerAlignment : 'grid']">
-        <div :class="'col-' + contentBannerColumns">
+        <div :class="'col-' + contentBannerColumns + '_mi-12'">
           <div v-if="contentBannerType === 'image'" class="content-banner-image">
             <img :src="contentBannerItem" />
           </div>
@@ -48,7 +48,7 @@
         </div>
       </div>
       <div v-if="contentFooterItem" class="grid">
-        <div :class="'col-' + contentFooterColumns">
+        <div :class="'col-' + contentFooterColumns + '_mi-12'">
           <div v-if="contentFooterType === 'image'" class="content-banner-image">
             <img :src="contentFooterItem" />
           </div>
@@ -208,6 +208,9 @@ export default {
   height: 38.2vh;
   margin-bottom: 2rem;
   position: relative;
+  @include small {
+    height: 61.8vh;
+  }
 }
 
 .banner {
@@ -260,5 +263,11 @@ export default {
 .content-text {
   column-gap: 1rem;
   margin-top: 2rem;
+  @include small {
+    column-count: 2 !important;
+  }
+  @include small {
+    column-count: 1 !important;
+  }
 }
 </style>

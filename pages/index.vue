@@ -16,7 +16,7 @@
           v-for="post in postList"
           :key="post.id"
           :post="post"
-          class="col-4"
+          class="col-4_ti-12_mi-6"
           @postTileMounted="postTileMounted" />
       </div>
     </div>
@@ -134,5 +134,8 @@ export default {
   height: 38.2vh;
   margin-bottom: 2rem;
   position: relative;
+  @include small {
+    height: 61.8vh;
+  }
 }
 </style>

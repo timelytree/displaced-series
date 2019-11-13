@@ -62,6 +62,11 @@ export default {
   @include display-flex;
   @include flex-row;
   @include flex-middle;
+
+  @include small {
+    margin-top: 3rem;
+  }
+
   a {
     float: left;
     margin-right: 15px;
