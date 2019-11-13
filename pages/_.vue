@@ -15,6 +15,10 @@
       :post="post"
       :recent-posts="recentPosts" />
 
+    <AboutPage
+      v-if="page && page.post_template === 'about' && !loading"
+      :page="page" />
+
     <PageFooter
       v-if="!loading"
       :recent-posts="recentPosts" />
@@ -27,6 +31,7 @@ import { mapGetters } from 'vuex'
 import CloneDeep from 'lodash/cloneDeep'
 import Api from '@/api'
 
+import AboutPage from '@/layouts/AboutPage'
 import PostSingle from '@/layouts/PostSingle'
 
 import Loader from '@/components/Loader'
@@ -37,6 +42,7 @@ export default {
   components: {
     Loader,
     Header,
+    AboutPage,
     PostSingle,
     PageFooter
   },
@@ -44,7 +50,8 @@ export default {
   data () {
     return {
       loading: true,
-      post: false
+      post: false,
+      page: false
     }
   },
 
@@ -65,7 +72,14 @@ export default {
 
   async asyncData ({ params, error }) {
     const post = await Api.getSinglePost(params.pathMatch)
-    return { post }
+    console.log(post.post_type)
+    if (post.post_type === 'page') {
+      return { page: post }
+    } else if (post.post_type === 'post') {
+      return { post }
+    } else {
+      console.log('ERROR === PAGE DOES NOT EXIST')
+    }
   },
 
   async fetch ({ store, params }) {
@@ -78,7 +92,9 @@ export default {
   },
 
   mounted () {
-    if (this.post) { this.loading = false }
+    if (this.post || this.page) {
+      this.loading = false
+    }
   }
 }
 </script>
