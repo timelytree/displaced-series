@@ -8,11 +8,11 @@ export default {
   // /////////////////////////////////////////////////////// Headers of the Page
   // ---------------------------------------------------------------------------
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Displaced | An Original Documentary Series',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: 'Burn your identity. Hide in a cargo box. Get to the refugee camp. Smoke shisha with your best friends. Restart life.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' }

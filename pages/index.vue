@@ -53,6 +53,18 @@ function activatePostTiles (count) {
 }
 
 export default {
+  head () {
+    const self = this
+    return {
+      title: 'Displaced | ' + self.seoTitle,
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: self.seoDescription
+      }]
+    }
+  },
+
   components: {
     Loader,
     Header,
@@ -71,8 +83,32 @@ export default {
 
   computed: {
     ...mapGetters({
+      siteOptions: 'global/siteOptions',
       postList: 'posts/postList'
     }),
+    seoImage () {
+      const globalImage = this.siteOptions.seo_global_image
+      const pageImage = this.page.metadata.seo_page_image
+      let image = ''
+      if (globalImage) { image = globalImage }
+      if (pageImage) { image = pageImage }
+      return image
+    },
+    seoTitle () {
+      const pageSeoTitle = this.page.metadata.seo_page_title
+      const pageTitle = this.page.post_title
+      let title = pageTitle
+      if (pageSeoTitle && pageSeoTitle !== '') { title = pageSeoTitle }
+      return title
+    },
+    seoDescription () {
+      const globalSeoDescription = this.siteOptions.seo_global_description
+      const pageSeoDescription = this.page.metadata.seo_page_description
+      let description = ''
+      if (globalSeoDescription && globalSeoDescription !== '') { description = globalSeoDescription }
+      if (pageSeoDescription && pageSeoDescription !== '') { description = pageSeoDescription }
+      return description
+    },
     truncatedPostList () {
       const postList = CloneDeep(this.postList)
       const page = this.page

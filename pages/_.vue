@@ -39,6 +39,18 @@ import Header from '@/components/Header'
 import PageFooter from '@/components/PageFooter'
 
 export default {
+  head () {
+    const self = this
+    return {
+      title: 'Displaced | ' + self.seoTitle,
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: self.seoDescription
+      }]
+    }
+  },
+
   components: {
     Loader,
     Header,
@@ -57,8 +69,32 @@ export default {
 
   computed: {
     ...mapGetters({
+      siteOptions: 'global/siteOptions',
       postList: 'posts/postList'
     }),
+    seoImage () {
+      const globalImage = this.siteOptions.seo_global_image
+      const pageImage = this.page ? this.page.metadata.seo_page_image : this.post ? this.post.metadata.seo_page_image : ''
+      let image = ''
+      if (globalImage) { image = globalImage }
+      if (pageImage) { image = pageImage }
+      return image
+    },
+    seoTitle () {
+      const pageSeoTitle = this.page ? this.page.metadata.seo_page_title : this.post ? this.post.metadata.seo_page_title : ''
+      const pageTitle = this.page ? this.page.post_title : this.post ? this.post.post_title : ''
+      let title = pageTitle
+      if (pageSeoTitle && pageSeoTitle !== '') { title = pageSeoTitle }
+      return title
+    },
+    seoDescription () {
+      const globalSeoDescription = this.siteOptions.seo_global_description
+      const pageSeoDescription = this.page ? this.page.metadata.seo_page_description : this.post ? this.post.metadata.seo_page_description : ''
+      let description = ''
+      if (globalSeoDescription && globalSeoDescription !== '') { description = globalSeoDescription }
+      if (pageSeoDescription && pageSeoDescription !== '') { description = pageSeoDescription }
+      return description
+    },
     recentPosts () {
       const postList = CloneDeep(this.postList)
       if (postList) {

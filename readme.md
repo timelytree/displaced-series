@@ -20,6 +20,7 @@ https://medium.com/@moustachedesign/creating-a-website-with-nuxt-js-and-wordpres
 https://medium.com/@fadingdust/review-of-wordpress-and-vue-js-router-edition-de0d0662c0b8
 https://github.com/srhise/nuxt-wordpress-pwa
 https://www.reddit.com/r/vuejs/comments/anmmlx/handling_a_vue_site_using_wordpress_as_a/
+https://stackoverflow.com/questions/18352682/correct-file-permissions-for-wordpress
 
 # POTENTIAL DIFFICULTIES
 https://nuxtjs.org/guide/routing/#unknown-dynamic-nested-routes
@@ -42,6 +43,9 @@ location / {
     }
 }
 ```
+- Adding a remote URL: `git remote add origin git@github.com:timelytree/displaced-series.git`
+- Development: `pm2 start npm --name "nuxt" -- run dev`
+- Production: `npm run build && pm2 start npm --name "au-portfolio" -- start`
 
 ## Build Update
 - `git pull origin master`
@@ -49,4 +53,3 @@ location / {
 - `pm2 restart displacedseries-nuxt`
 
 ## Production Setup
-- Adding a remote URL: `git remote add origin git@github.com:timelytree/displaced-series.git`
